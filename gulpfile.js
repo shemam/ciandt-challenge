@@ -117,7 +117,7 @@ gulp.task('serve', ['build'], function () {
 	//Starts the webserver on the "8000" port
 	//To access the app go to "http://localhost:8000"
 	gulp.src('dist')
-    .pipe(webserver({open: true}));
+    	.pipe(webserver({open: true}));
 })
 
 
@@ -132,7 +132,8 @@ gulp.task('build', [
 	'build-libs-css',
 	'build-libs-js',
 	'build-js',
-	'build-templates'
+	'build-templates',
+	'move-img'
 ]);
 
 /**
@@ -175,7 +176,7 @@ gulp.task('build-css', function () {
 		.pipe(sourcemaps.write('.'))
 
 		//Sends it to the dist folder 
-		.pipe(gulp.dest('dist'))
+		.pipe(gulp.dest('dist/css'))
 
 })
 
@@ -203,7 +204,7 @@ gulp.task('build-libs-css', function () {
 		.pipe(sourcemaps.write('.'))
 
 		//Sends it to the dist folder 
-		.pipe(gulp.dest('dist'))
+		.pipe(gulp.dest('dist/css'))
 })
 
 /**
@@ -234,7 +235,7 @@ gulp.task('build-libs-js', function () {
 		.pipe(sourcemaps.write('.'))
 
 		//Sends it to the dist folder 
-		.pipe(gulp.dest('dist'))
+		.pipe(gulp.dest('dist/js'))
 })
 
 
@@ -261,7 +262,7 @@ gulp.task('build-js', function() {
 		.pipe(sourcemaps.write('.'))
 
 		//Sends it to the dist folder
-		.pipe(gulp.dest('dist'))
+		.pipe(gulp.dest('dist/js'))
 });
 
 /**
@@ -293,5 +294,54 @@ gulp.task('build-templates', function () {
 		.pipe(sourcemaps.write('.'))
 
 		//Sends it to the dist folder
-		.pipe(gulp.dest('dist'))
+		.pipe(gulp.dest('dist/js'))
+});
+
+
+/**
+ * Dev Server with livereload
+ *
+ * Task to watch modifications on files and 
+ * refresh automatically the browser during development
+ */
+gulp.task('dev', function () {
+
+	//Webserver Configuration object
+	var config = {
+		livereload: true,//Refreshes the browser with every change on the files
+		open: true//Opens the browser automatically
+	}
+
+	//Starts the webserver serving the dist folder
+	gulp.src('dist')
+		.pipe(webserver(config))
+
+});
+
+
+/**
+ * Watch
+ *
+ * Task to watch modifications on files and 
+ * run the build task
+ */
+gulp.task('watch', function () {
+
+	//Watches the src directory and rebuilds the app 
+	//whenever a file changes
+	gulp.watch('src/**/*',['build']);
+
+});
+
+/**
+ * Move Images
+ *
+ * Task to move images to dist folder
+ */
+gulp.task('move-img', function () {
+
+	//Moves all images to the dist/img folder
+	gulp.src('src/img/*')
+  		.pipe(gulp.dest('dist/img'));
+
 });

@@ -1,10 +1,99 @@
 /**
  * Project: CI&T Hiring Challenge
  * Author: Shermam Xavier Miranda
- * email: shermam.miranda@hotmail.com 
+ * email: shermam.miranda@hotmail.com
  */
 
-*{
-	margin:0;
-	padding: 0;
+html, body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#content{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 5px;
+    background-color:#DDDDDD;
+}
+
+
+.image{
+	height: 100%;
+	max-width: 100%;
+}
+
+.movie-radio-button{
+	margin: 5px;
+}
+
+.movie-tile-footer{
+	background: rgb(63, 81, 181);
+}
+
+.inner-container{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-right: 25px;
+}
+
+@media (max-width: 600px){
+    .table-container{
+        margin-left: -30px;
+        margin-right: -30px;
+    }
+}
+
+.table{    
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: table;
+    border-color: grey;
+}
+
+.table th{
+    font-size: 12px;
+    text-align: left;
+    font-family: sans-serif;
+    font-weight: normal;
+    color: rgba(0,0,0,0.54);
+    padding: 10px;
+}
+
+.table td{
+    font-size: 13px;
+    text-align: left;
+    font-family: sans-serif;
+    font-weight: normal;
+    color: rgba(0,0,0,0.87);
+    padding: 3px;
+    border-top: 1px solid #ddd;
+}
+
+.table tr:hover:not(thead){
+    background-color: #EEEEEE;
+}
+
+.table tr{
+    display: table-row;
+    height: 40px;
+}
+
+.table thead{
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.table tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
 }

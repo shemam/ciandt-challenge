@@ -1,0 +1,49 @@
+<!-- Page Title -->
+<h1 class="md-title">About Yourself</h1>
+
+<!-- Page Description -->
+<p>First things first: Tell us a little bit about yourself.</p>
+
+<!-- Favorite comic book superhero input -->
+<md-input-container>
+	<label>Your favorite comic book superhero</label>
+	<input ng-model="aboutYourself.superhero">
+</md-input-container>
+
+<!-- Tv Series Input -->
+<md-input-container>
+	<label>Tv Series that you are currently watching</label>
+	<input ng-model="aboutYourself.tvSeries">
+</md-input-container>
+
+<!-- Input for way of saying biscuit in portuguese -->
+<md-input-container>
+	<label>Wich one do you use: Bolacha or biscoito?</label>
+	<input ng-model="aboutYourself.biscuit">
+</md-input-container>
+
+<!-- Favorite quote input -->
+<md-input-container>
+	<label>What is the best quote ever</label>
+	<input ng-model="aboutYourself.quote">
+</md-input-container>
+
+
+
+<!-- Button to navigate back to the Root page -->
+<md-button 
+	class="md-raised md-primary"
+	ui-sref="root">
+
+	Back to the Start
+
+</md-button>
+
+<!-- Button to navigate to the Movie page -->
+<md-button 
+	class="md-raised md-primary"
+	ui-sref="movie">
+
+	Next (Movie)
+
+</md-button>

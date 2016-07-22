@@ -17,10 +17,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 		<!-- Link to the Libs Stylesheet -->
-		<link rel="stylesheet" type="text/css" href="lib.css">
+		<link rel="stylesheet" type="text/css" href="css/lib.css">
 
 		<!-- Link to the main Stylesheet -->
-		<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+
+		<!-- Link to Roboto font. Font used in the Material Design which is NOT automatically loaded by Angular Material -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+		<!-- CI&T Favicon -->
+		<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 
 		<!-- App Title -->
 		<title>CI&T Challenge</title>
@@ -32,22 +38,32 @@
 		<md-content>
 			
 			<!-- Toolbar -->
-			<md-toolbar class="md-toolbar-tools"></md-toolbar>
+			<md-toolbar class="md-toolbar-tools" layout-align="center center">
+				
+				<!-- App title -->
+				<h3>CI&T Hiring Challenge</h3>
+
+			</md-toolbar>
 
 			<!-- Place where the views will be inserted -->
-			<div ui-view></div>
+			<div ui-view
+				data-layout="column" 
+				data-flex=""
+				id="content">
+					
+			</div>
 
 		</md-content>	
 
 
 		<!-- Link to the Libs Javascript file -->
-		<script src="lib.js" defer></script>
+		<script src="js/lib.js" defer></script>
 
 		<!-- Link to the main Javascript file -->
-		<script src="main.js" defer></script>
+		<script src="js/main.js" defer></script>
 
 		<!-- Link to the templates Javascript file -->
-		<script src="templates.js" defer></script>
+		<script src="js/templates.js" defer></script>
 
 	</body>
 </html>

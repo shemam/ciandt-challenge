@@ -1,0 +1,86 @@
+<!-- Container for Header of the Tv Show Page  -->
+<div class="inner-container md-whiteframe-4dp">
+
+	<!-- Tv Show Title and year of airing -->
+	<h1 class="md-title">{{tvShow.selected.Title}} ({{tvShow.selected.Year}})</h1>
+
+	<!-- Tv show plot -->
+	<p>Plot: {{tvShow.selected.Plot}}</p>
+
+	<!-- Page Description -->
+	<p>{{tvShow.selected.Title}} is an amazing TV Show. What is your favorite season?</p>
+
+	<!-- Group of radio buttons to select the favorite season  -->
+	<md-radio-group ng-model="tvShow.favoriteSeason">
+
+		<!-- Radio button that will be repeated for each season -->
+		<md-radio-button 
+			ng-value="season" 
+			class="md-primary"
+			ng-repeat="season in tvShow.seasons()">
+
+			<!-- Season number -->
+			{{season}}
+
+		</md-radio-button>
+
+	</md-radio-group>
+
+</div>
+
+<!-- Container for secondary part of the tv show page -->
+<div class="inner-container md-whiteframe-4dp">
+
+	<!-- Episodes Table -->
+	<table class="table">
+
+		<!-- Headers for the episodes table -->
+        <thead>
+            <tr>
+                <th>Episode</th>
+                <th>Name</th>
+                <th hide-xs hide-sm>Released</th>
+                <th hide-xs hide-sm>ImdbRating</th>
+            </tr>
+        </thead>
+
+		<!-- Body for the episodes table -->
+        <tbody>
+            <tr ng-repeat="episode in tvShow.seasonEpisodes">
+                <td>{{episode.Episode}}</td>
+                <td>{{episode.Title}}</td>
+                <td hide-xs hide-sm>{{episode.Released | date:"MMM dd, yyyy"}}</td>
+                <td hide-xs hide-sm>{{episode.imdbRating}}</td>
+
+                <td hide-gt-sm>
+                    <md-button class="md-icon-button"                               
+                               aria-label="Episode Info">
+
+                        <md-icon> info </md-icon>
+
+                    </md-button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Button to navigate back to the Movie page -->
+<md-button 
+	class="md-raised md-primary"
+	ui-sref="movie">
+
+	Back to Movie
+
+</md-button>
+
+
+<!-- Button to navigate to the Food page -->
+<md-button 
+	class="md-raised md-primary"
+	ui-sref="food">
+
+	Next (Food)
+
+</md-button>
