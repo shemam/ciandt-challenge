@@ -1,9 +1,38 @@
+<!-- Container for Header of the review Page  -->
+<div class="inner-container md-whiteframe-4dp">
 
-<div>review</div>
+	<!-- Review page title -->
+	<h1 class="md-title">Review:</h1>
 
-<div>{{review.teste}}</div>
+	<!-- Super hero review -->
+	<p class="md-subhead">Your favorite comic book Superhero</p>
+	<p class="md-headline review-answer">{{review.superHero.toUpperCase()}}</p>
 
+	<!-- Current series review -->
+	<p class="md-subhead">Tv Series that you are currently watching</p>
+	<p class="md-headline review-answer">{{review.tvShow.toUpperCase()}}</p>
 
+	<!-- Biscuit review -->
+	<p class="md-subhead">Bolacha or biscoito?</p>
+	<p class="md-headline review-answer">{{review.biscuit.toUpperCase()}}</p>
+
+	<!-- Quote review -->
+	<p class="md-subhead">What is the best quote ever</p>
+	<p class="md-headline review-answer">{{review.quote.toUpperCase()}}</p>
+
+	<!-- Movie review -->
+	<p class="md-subhead">Your favorite Star Wars Movie</p>
+	<p class="md-headline review-answer">{{review.movie.toUpperCase()}}</p>
+
+	<!-- Tv Show Review -->
+	<p class="md-subhead">Your favorite Got Season</p>
+	<p class="md-headline review-answer">{{review.season.toUpperCase()}}</p>
+
+	<!-- Food review -->
+	<p class="md-subhead">Your kind of food</p>
+	<p class="md-headline review-answer">{{review.food.toUpperCase()}}</p>
+
+</div>
 
 <!-- Button to navigate back to the Food page -->
 <md-button 
@@ -11,5 +40,14 @@
 	ui-sref="food">
 
 	Back to Food
+
+</md-button>
+
+<!-- Button to navigate to the thank you page -->
+<md-button 
+	class="md-raised md-primary"
+	ui-sref="thanks">
+
+	Save
 
 </md-button>

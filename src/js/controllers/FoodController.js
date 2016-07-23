@@ -20,7 +20,25 @@
 		//Sets the food variable to the current instance of the controller
 		var food = this;
 
-		food.teste = 'ahhhhhhhhhhhhhhhhhhhhhhh!!!!!!!!!!!!!!!!!';
+		//Array containin the food options
+		food.foodOptions = [
+			{
+				value : 'I am an insect.',
+				img : 'insect.jpg'
+			},
+			{
+				value : 'I love pasta.',
+				img : 'pasta.jpg'
+			},
+			{
+				value : 'Gimme meat.',
+				img : 'meat.jpg'
+			},
+			{
+				value : 'Is it food? I am in.',
+				img : 'food.jpg'
+			}
+		];
 	}
 
 })()

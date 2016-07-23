@@ -1,7 +1,37 @@
+<!-- Container for Header of the food Page  -->
+<div class="inner-container md-whiteframe-4dp">
 
-<div>Food</div>
+	<!-- Food page title -->
+	<h1 class="md-title">Food</h1>
 
-<div>{{food.teste}}</div>
+	<!-- Food Question -->
+	<p>We take too serious to choose our restaurant, everyday. What kind of food do you like?</p>
+
+	<!-- Group of radio buttons to select the food option  -->
+	<md-radio-group ng-model="food.foodChoice" layout="row" layout-align="space-around center">
+
+		<!-- Radio button that will be repeated for each season -->
+		<md-radio-button 
+			ng-value="option.value" 
+			class="md-primary"
+			ng-repeat="option in food.foodOptions">
+
+			<!-- Group for the image and name of the food for alignment -->
+			<div layout="column" layout-align="center center">
+				
+				<!-- Food image -->
+				<img ng-src="img/{{option.img}}" alt="{{option.value}}" class="food-image md-whiteframe-4dp">
+
+				<!-- Food option -->
+				{{option.value}}
+
+			</div>			
+
+		</md-radio-button>
+
+	</md-radio-group>
+
+</div>
 
 <!-- Button to navigate back to the Tv Show page -->
 <md-button 

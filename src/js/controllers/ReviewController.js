@@ -20,7 +20,19 @@
 		//Sets the review variable to the current instance of the controller
 		var review = this;
 
-		review.teste = 'ahhhhhhhhhhhhhhhhhhhhhhh!!!!!!!!!!!!!!!!!';
+		review.superHero = 'Superman';
+
+		review.tvShow = 'Breaking Bad';
+
+		review.biscuit = 'Bisoito';
+
+		review.quote = 'Imagination is more important than knowledge';
+
+		review.movie = 'Star Wars episode X';
+
+		review.season = 'Got - Season X';
+
+		review.food = 'Gimme meat';
 	}
 
 })()

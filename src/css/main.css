@@ -42,58 +42,24 @@ html, body{
 }
 
 @media (max-width: 600px){
-    .table-container{
+    .inner-container{
         margin-left: -30px;
         margin-right: -30px;
     }
 }
 
-.table{    
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    display: table;
-    border-color: grey;
+.food-image{
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
-.table th{
-    font-size: 12px;
-    text-align: left;
-    font-family: sans-serif;
-    font-weight: normal;
-    color: rgba(0,0,0,0.54);
-    padding: 10px;
+.review-answer{
+    margin-top: -20px;
 }
 
-.table td{
-    font-size: 13px;
-    text-align: left;
-    font-family: sans-serif;
-    font-weight: normal;
-    color: rgba(0,0,0,0.87);
-    padding: 3px;
-    border-top: 1px solid #ddd;
-}
-
-.table tr:hover:not(thead){
-    background-color: #EEEEEE;
-}
-
-.table tr{
-    display: table-row;
-    height: 40px;
-}
-
-.table thead{
-    display: table-header-group;
-    vertical-align: middle;
-    border-color: inherit;
-}
-
-.table tbody{
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
+.thanks{
+    white-space: pre-wrap;
+    padding: 40px;
+    text-align: center;
 }

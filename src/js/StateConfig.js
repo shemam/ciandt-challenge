@@ -110,6 +110,20 @@
 			controllerAs: 'review'
 		})
 
+		/**
+		 * Thanks State
+		 *
+		 * State Related to the Thanks Page
+		 * 	
+		 * @type {State}
+		 */
+		.state('thanks', {
+			url: '/thanks',
+			templateUrl: 'thanks.html',
+			controller: 'ThanksController',
+			controllerAs: 'thanks'
+		})
+
 	}
 
 })()

@@ -167,7 +167,10 @@ gulp.task('build-css', function () {
 	return gulp.src('./src/css/*.css')
 
 		//Starts the creation of the maps file
-		.pipe(sourcemaps.init())	
+		.pipe(sourcemaps.init())
+
+		//Concatenates all files in the files array into a main.css file
+		.pipe(concat('main.css'))	
 
 		//Minifies the CSS File
 		.pipe(cleanCSS())	
