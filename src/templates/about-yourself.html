@@ -1,49 +1,140 @@
-<!-- Page Title -->
-<h1 class="md-title">About Yourself</h1>
+<!-- Container for Header of the root Page  -->
+<div class="inner-container md-whiteframe-4dp" data-layout="column">
 
-<!-- Page Description -->
-<p>First things first: Tell us a little bit about yourself.</p>
+	<!-- Page Title -->
+	<h1 class="md-title">About Yourself</h1>
 
-<!-- Favorite comic book superhero input -->
-<md-input-container>
-	<label>Your favorite comic book superhero</label>
-	<input ng-model="aboutYourself.superhero">
-</md-input-container>
+	<!-- Page Description -->
+	<p>First things first: Tell us a little bit about yourself.</p>
 
-<!-- Tv Series Input -->
-<md-input-container>
-	<label>Tv Series that you are currently watching</label>
-	<input ng-model="aboutYourself.tvSeries">
-</md-input-container>
+	<form name="aboutYourselForm" novalidate>
 
-<!-- Input for way of saying biscuit in portuguese -->
-<md-input-container>
-	<label>Wich one do you use: Bolacha or biscoito?</label>
-	<input ng-model="aboutYourself.biscuit">
-</md-input-container>
+		<!-- Container for the form inputs -->
+		<div layout="column"  layout-gt-sm="row" flex>
+			
+			<!-- First column of inputs -->
+			<div layout="column" flex>
+				
+				<!-- Favorite comic book superhero input -->
+				<md-input-container>
+					<label>Your favorite comic book superhero</label>
+					<input ng-model="aboutYourself.answer.superhero"
+						md-maxlength="30" 
+						required 
+						md-no-asterisk
+						name="superhero">
 
-<!-- Favorite quote input -->
-<md-input-container>
-	<label>What is the best quote ever</label>
-	<input ng-model="aboutYourself.quote">
-</md-input-container>
+					<!-- Error messages for the superhero input -->
+					<div ng-messages="aboutYourselForm.superhero.$error">
+						<div ng-message="required">This is required.</div>
+						<div ng-message="md-maxlength">The superhero name has to be less than 30 characters long.</div>
 
+					</div>
 
+					<!-- Valid message for the superhero input field -->
+					<div ng-show="aboutYourselForm.superhero.$valid" class="valid-message">
+						Ok. Very good.
+					</div>
 
-<!-- Button to navigate back to the Root page -->
-<md-button 
-	class="md-raised md-primary"
-	ui-sref="root">
+				</md-input-container>				
 
-	Back to the Start
+				<!-- Tv Series Input -->
+				<md-input-container>
+					<label>Tv Series that you are currently watching</label>
 
-</md-button>
+					<input ng-model="aboutYourself.answer.tvSeries"
+						md-maxlength="50" 
+						required 
+						md-no-asterisk
+						name="tvSeries">
 
-<!-- Button to navigate to the Movie page -->
-<md-button 
-	class="md-raised md-primary"
-	ui-sref="movie">
+					<!-- Error messages for the tvSeries input -->
+					<div ng-messages="aboutYourselForm.tvSeries.$error">
+						<div ng-message="required">This is required.</div>
+						<div ng-message="md-maxlength">The tvSeries name has to be less than 50 characters long.</div>
+					</div>
 
-	Next (Movie)
+					<!-- Valid message for the tvSeries input field -->
+					<div ng-show="aboutYourselForm.tvSeries.$valid" class="valid-message">
+						Sounds good.
+					</div>
 
-</md-button>
+				</md-input-container>
+
+			</div>
+
+			<!-- Second column of inputs -->
+			<div layout="column" flex>
+
+				<!-- Input for way of saying biscuit in portuguese -->
+				<md-input-container class="adjust-select">
+					<label>Wich one do you use: Bolacha or biscoito?</label>
+					<md-select name="biscuit" ng-model="aboutYourself.answer.biscuit" required >						
+						<md-option value="Bolacha">Bolacha</md-option>
+						<md-option value="Biscoito">Biscoito</md-option>
+					</md-select>
+					
+					<div ng-messages="aboutYourselForm.biscuit.$error">
+						<div ng-message="required">Required</div>
+					</div>
+
+					<!-- Valid message for the biscuit input field -->
+					<div ng-show="aboutYourselForm.biscuit.$valid" class="valid-message">
+						Nice.
+					</div>					
+					
+				</md-input-container>
+
+				<!-- Favorite quote input -->
+				<md-input-container>
+					<label>What is the best quote ever</label>
+					<input ng-model="aboutYourself.answer.quote"
+						md-maxlength="200" 
+						required 
+						md-no-asterisk
+						name="quote">
+
+					<!-- Error messages for the quote input -->
+					<div ng-messages="aboutYourselForm.quote.$error">
+						<div ng-message="required">This is required.</div>
+						<div ng-message="md-maxlength">The quote name has to be less than 200 characters long.</div>
+					</div>
+
+					<!-- Valid message for the quote input field -->
+					<div ng-show="aboutYourselForm.quote.$valid" class="valid-message">
+						Very good.
+					</div>
+				</md-input-container>			
+
+			</div>
+
+		</div>
+
+		<!-- Container for the buttons -->
+		<div layout="row" layout-align="space-between center">
+			
+			<!-- Button to navigate back to the Root page -->
+			<md-button 
+				class="md-raised md-primary"
+				ui-sref="root">
+
+				Back to the Start
+
+			</md-button>
+
+			<!-- Button to navigate to the Movie page -->
+			<md-button 
+				class="md-raised md-primary"
+				ui-sref="movie"
+				ng-disabled="aboutYourselForm.$invalid"
+				type="submit">
+
+				Next (Movie)
+
+			</md-button>
+
+		</div>
+
+	</form>
+
+</div>

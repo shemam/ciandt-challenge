@@ -4,50 +4,71 @@
 	<!-- Review page title -->
 	<h1 class="md-title">Review:</h1>
 
-	<!-- Super hero review -->
-	<p class="md-subhead">Your favorite comic book Superhero</p>
-	<p class="md-headline review-answer">{{review.superHero.toUpperCase()}}</p>
+	<!-- Contains the columns of items -->
+	<div class="review-container" layout="column" layout-gt-xs="row"  layout-align-gt-xs="space-around center">
 
-	<!-- Current series review -->
-	<p class="md-subhead">Tv Series that you are currently watching</p>
-	<p class="md-headline review-answer">{{review.tvShow.toUpperCase()}}</p>
+		<!-- First Column -->
+		<div>
 
-	<!-- Biscuit review -->
-	<p class="md-subhead">Bolacha or biscoito?</p>
-	<p class="md-headline review-answer">{{review.biscuit.toUpperCase()}}</p>
+			<!-- Super hero review -->
+			<p class="md-subhead">Your favorite comic book Superhero</p>
+			<p class="md-headline review-answer">{{review.answer.superhero.toUpperCase() || 'NOT INFORMED'}}</p>
 
-	<!-- Quote review -->
-	<p class="md-subhead">What is the best quote ever</p>
-	<p class="md-headline review-answer">{{review.quote.toUpperCase()}}</p>
+			<!-- Current series review -->
+			<p class="md-subhead">Tv Series that you are currently watching</p>
+			<p class="md-headline review-answer">{{review.answer.tvSeries.toUpperCase() || 'NOT INFORMED'}}</p>
 
-	<!-- Movie review -->
-	<p class="md-subhead">Your favorite Star Wars Movie</p>
-	<p class="md-headline review-answer">{{review.movie.toUpperCase()}}</p>
+			<!-- Biscuit review -->
+			<p class="md-subhead">Bolacha or biscoito?</p>
+			<p class="md-headline review-answer">{{review.answer.biscuit.toUpperCase() || 'NOT INFORMED'}}</p>
 
-	<!-- Tv Show Review -->
-	<p class="md-subhead">Your favorite Got Season</p>
-	<p class="md-headline review-answer">{{review.season.toUpperCase()}}</p>
+			<!-- Quote review -->
+			<p class="md-subhead">What is the best quote ever</p>
+			<p class="md-headline review-answer">{{review.answer.quote.toUpperCase() || 'NOT INFORMED'}}</p>
+			
+		</div>
 
-	<!-- Food review -->
-	<p class="md-subhead">Your kind of food</p>
-	<p class="md-headline review-answer">{{review.food.toUpperCase()}}</p>
+		<!-- Second Column -->
+		<div>
+
+			<!-- Movie review -->
+			<p class="md-subhead">Your favorite Star Wars Movie</p>
+			<p class="md-headline review-answer">{{review.answer.movie.toUpperCase() || 'NOT INFORMED'}}</p>
+
+			<!-- Tv Show Review -->
+			<p class="md-subhead">Your favorite Got Season</p>
+			<p class="md-headline review-answer">{{review.getTvShow()}}</p>
+
+			<!-- Food review -->
+			<p class="md-subhead">Your kind of food</p>
+			<p class="md-headline review-answer">{{review.answer.food.toUpperCase() || 'NOT INFORMED'}}</p>
+			
+		</div>
+		
+	</div>
+
+
+	<!-- Container for the buttons -->
+	<div layout="row" layout-align="space-between center">
+
+		<!-- Button to navigate back to the Food page -->
+		<md-button 
+			class="md-raised md-primary"
+			ui-sref="food">
+
+			Back to Food
+
+		</md-button>
+
+		<!-- Button to navigate to the thank you page -->
+		<md-button 
+			class="md-raised md-primary"
+			ui-sref="thanks">
+
+			Save
+
+		</md-button>
+
+	</div>	
 
 </div>
-
-<!-- Button to navigate back to the Food page -->
-<md-button 
-	class="md-raised md-primary"
-	ui-sref="food">
-
-	Back to Food
-
-</md-button>
-
-<!-- Button to navigate to the thank you page -->
-<md-button 
-	class="md-raised md-primary"
-	ui-sref="thanks">
-
-	Save
-
-</md-button>

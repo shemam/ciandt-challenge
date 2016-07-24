@@ -1,11 +1,20 @@
-<h1>Titulo</h1>
-<div>{{root.teste}}</div>
+<!-- Container for Header of the root Page  -->
+<div class="inner-container md-whiteframe-4dp text-page">
 
-<!-- Button to navigate to the Start of the Survey -->
-<md-button 
-	class="md-raised md-primary"
-	ui-sref="about-yourself">
+	<!-- root page title -->
+	<h2 class="md-display-2">{{root.title}}</h2>
 
-	Start the Survey
+	<!-- root page message -->
+	<h3 class="md-subhead">{{root.message}}</h3>
 
-</md-button>
+	<!-- Button to navigate to the Start of the Survey -->
+	<md-button 
+		class="md-raised md-primary"
+		ui-sref="about-yourself">
+
+		Start the Survey
+
+	</md-button>
+
+</div>
+

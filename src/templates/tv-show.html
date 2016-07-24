@@ -1,35 +1,45 @@
 <!-- Container for Header of the Tv Show Page  -->
-<div class="inner-container md-whiteframe-4dp">
+<div class="inner-container md-whiteframe-4dp" layout="column" layout-gt-xs="row" ng-show="tvShow.selected">
 
-	<!-- Tv Show Title and year of airing -->
-	<h1 class="md-title">{{tvShow.selected.Title}} ({{tvShow.selected.Year}})</h1>
+	<div layout-align-xs="center center" layout-xs="row">
+		
+		<img ng-src="{{tvShow.selected.Poster}}" alt="{{tvShow.selected.Title}}" class="tvshow-img">
 
-	<!-- Tv show plot -->
-	<p>Plot: {{tvShow.selected.Plot}}</p>
+	</div>
 
-	<!-- Page Description -->
-	<p>{{tvShow.selected.Title}} is an amazing TV Show. What is your favorite season?</p>
+	<div layout="column" class="scroll-xs tvshow-description">
 
-	<!-- Group of radio buttons to select the favorite season  -->
-	<md-radio-group ng-model="tvShow.favoriteSeason">
+		<!-- Tv Show Title and year of airing -->
+		<h1 class="md-title">{{tvShow.selected.Title}} ({{tvShow.selected.Year}})</h1>
 
-		<!-- Radio button that will be repeated for each season -->
-		<md-radio-button 
-			ng-value="season" 
-			class="md-primary"
-			ng-repeat="season in tvShow.seasons()">
+		<!-- Tv show plot -->
+		<p>Plot: {{tvShow.selected.Plot}}</p>
 
-			<!-- Season number -->
-			{{season}}
+		<!-- Page Description -->
+		<p>{{tvShow.selected.Title}} is an amazing TV Show. What is your favorite season?</p>
 
-		</md-radio-button>
+		<!-- Group of radio buttons to select the favorite season  -->
+		<md-radio-group ng-model="tvShow.answer.season" layout="row" ng-change="tvShow.getEpisodes(tvShow.answer.season)">
 
-	</md-radio-group>
+			<!-- Radio button that will be repeated for each season -->
+			<md-radio-button 
+				ng-value="season" 
+				class="md-primary"
+				ng-repeat="season in tvShow.seasons()">
+
+				<!-- Season number -->
+				{{season}}
+
+			</md-radio-button>
+
+		</md-radio-group>
+
+	</div>	
 
 </div>
 
 <!-- Container for secondary part of the tv show page -->
-<div class="inner-container md-whiteframe-4dp">
+<div class="inner-container md-whiteframe-4dp" ng-show="tvShow.answer.season">
 
 	<!-- Episodes Table -->
 	<table class="table">
@@ -66,21 +76,27 @@
     </table>
 </div>
 
-<!-- Button to navigate back to the Movie page -->
-<md-button 
-	class="md-raised md-primary"
-	ui-sref="movie">
+<!-- Container for the buttons -->
+<div layout="row" layout-align="space-between center" class="inner-container md-whiteframe-4dp">
 
-	Back to Movie
+	<!-- Button to navigate back to the Movie page -->
+	<md-button 
+		class="md-raised md-primary"
+		ui-sref="movie">
 
-</md-button>
+		Back to Movie
+
+	</md-button>
 
 
-<!-- Button to navigate to the Food page -->
-<md-button 
-	class="md-raised md-primary"
-	ui-sref="food">
+	<!-- Button to navigate to the Food page -->
+	<md-button 
+		class="md-raised md-primary"
+		ui-sref="food"
+		ng-disabled="!tvShow.answer.season">
 
-	Next (Food)
+		Next (Food)
 
-</md-button>
+	</md-button>
+
+</div>

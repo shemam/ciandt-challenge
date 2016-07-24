@@ -10,15 +10,18 @@
 	*
 	* Controller that manages the Food page
 	*/
-	angular.module('app').controller('FoodController', FoodController);
+	angular.module('app').controller('FoodController', ['AnswersService', FoodController]);
 
 	/**
 	 * Food Controller Function
 	 */
-	function FoodController() {
+	function FoodController(AnswersService) {
 		
 		//Sets the food variable to the current instance of the controller
 		var food = this;
+
+		//Sets the answare property with the AnswersService
+		food.answer = AnswersService;
 
 		//Array containin the food options
 		food.foodOptions = [

@@ -4,6 +4,24 @@
  * email: shermam.miranda@hotmail.com 
  */
 
+/**
+ * Main module name
+ * 
+ * @type {String}
+ */
+var module = 'app';
+
+/**
+ * Host name
+ *
+ * You should set your ip here in order to be able to
+ * access the app from another device in the lan
+ * 
+ * @type {String}
+ */
+//var host = '192.168.1.103';
+var host = 'localhost';
+
 
 /**
  * Gulp Object
@@ -88,12 +106,6 @@ var strip = require('gulp-strip-comments');
  */
 var templateCache = require('gulp-angular-templatecache');
 
-/**
- * Main module name
- * 
- * @type {String}
- */
-var module = 'app';
 
 
 /**
@@ -117,7 +129,10 @@ gulp.task('serve', ['build'], function () {
 	//Starts the webserver on the "8000" port
 	//To access the app go to "http://localhost:8000"
 	gulp.src('dist')
-    	.pipe(webserver({open: true}));
+    	.pipe(webserver({
+			open: true,
+			host : host,
+		}));
 })
 
 
@@ -223,7 +238,9 @@ gulp.task('build-libs-js', function () {
 		"./node_modules/angular-aria/angular-aria.min.js",
 		"./node_modules/angular-animate/angular-animate.min.js",
 		"./node_modules/angular-material/angular-material.min.js",
-		"./node_modules/angular-ui-router/release/angular-ui-router.min.js"
+		"./node_modules/angular-ui-router/release/angular-ui-router.min.js",
+		"./node_modules/angular-messages/angular-messages.min.js",
+		"./node_modules/angular-filter/dist/angular-filter.min.js"	
 	];
 	
 	return gulp.src(libs)
@@ -311,6 +328,7 @@ gulp.task('dev', function () {
 
 	//Webserver Configuration object
 	var config = {
+		host : host,
 		livereload: true,//Refreshes the browser with every change on the files
 		open: true//Opens the browser automatically
 	}

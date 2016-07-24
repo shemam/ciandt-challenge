@@ -8,7 +8,7 @@
 	<p>We take too serious to choose our restaurant, everyday. What kind of food do you like?</p>
 
 	<!-- Group of radio buttons to select the food option  -->
-	<md-radio-group ng-model="food.foodChoice" layout="row" layout-align="space-around center">
+	<md-radio-group ng-model="food.answer.food" layout="column" layout-gt-xs="row" layout-align-gt-xs="space-around center">
 
 		<!-- Radio button that will be repeated for each season -->
 		<md-radio-button 
@@ -31,23 +31,29 @@
 
 	</md-radio-group>
 
+	<!-- Container for the buttons -->
+	<div layout="row" layout-align="space-between center">
+
+		<!-- Button to navigate back to the Tv Show page -->
+		<md-button 
+			class="md-raised md-primary"
+			ui-sref="tv-show">
+
+			Back to Tv Show
+
+		</md-button>
+
+
+		<!-- Button to navigate to the review page -->
+		<md-button 
+			class="md-raised md-primary"
+			ui-sref="review"
+			ng-disabled="!food.answer.food">
+
+			Next (Review)
+
+		</md-button>
+
+	</div>
+
 </div>
-
-<!-- Button to navigate back to the Tv Show page -->
-<md-button 
-	class="md-raised md-primary"
-	ui-sref="tv-show">
-
-	Back to Tv Show
-
-</md-button>
-
-
-<!-- Button to navigate to the review page -->
-<md-button 
-	class="md-raised md-primary"
-	ui-sref="review">
-
-	Next (Review)
-
-</md-button>

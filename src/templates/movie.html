@@ -1,76 +1,70 @@
-<!-- Page Title -->
-<h1 class="md-title">Movie</h1>
+<!-- Container for Header of the food Page  -->
+<div class="inner-container md-whiteframe-4dp">
 
-<!-- Page Description -->
-<p>Which of these is your favorite {{movie.franchise}} movie?</p>
+	<!-- Page Title -->
+	<h1 class="md-title">Movie</h1>
 
-<!-- Group of radiobuttons -->
-<md-radio-group ng-model="movie.favorite">
+	<!-- Page Description -->
+	<p>Which of these is your favorite {{movie.franchise}} movie?</p>
 
+	<!-- Group of radiobuttons -->
+	<md-radio-group ng-model="movie.answer.movie"  layout="column" >
 
-	<!-- Start o grid of movies -->
-	<md-grid-list
-		md-cols-xs="1" 
-		md-cols-sm="2" 
-		md-cols-md="4" 
-		md-cols-gt-md="6"
-		md-row-height="3:5"
-		md-gutter="12px" 
-		md-gutter-gt-sm="8px" >
+		<!-- Row of movies -->
+		<div ng-repeat="films in movie.movies | chunkBy: movie.getChunk()" layout="row" layout-align="space-around center">
 
-		<!-- Grid tile with on individual movie -->
-		<md-grid-tile 			
-			ng-repeat="film in movie.movies">
-
-			<!-- Movie Image -->
-			<!-- If an image is not available shows a default image -->
-			<img
-				class="image"
-				ng-src="{{film.Poster != 'N/A' ? film.Poster : 'img/no-thumb.jpg'}}" 
-				alt="{{film.Title}}">
-
-
-			<!-- Tile Footer -->
-			<md-grid-tile-footer
-				layout-align="center center"
-				class="movie-tile-footer">
-
+			<div class="movie-container" ng-repeat="film in films">
+				
 				<!-- Radio Button for choosig the favorite movie -->
-				<md-radio-button
+				<md-radio-button					
 					class="movie-radio-button"
-					ng-value="film.imdbID"
+					ng-value="film.Title"
 					aria-label="{{film.Title}}">
 
-					<!-- Name of the movie -->
-					<h3>{{film.Title}}</h3>
+					<!-- Group for the image and name of the food for alignment -->
+					<div layout="column" layout-align="center center">
+
+						<!-- Movie Image -->
+						<!-- If an image is not available shows a default image -->
+						<img class="movie-image md-whiteframe-4dp"
+							ng-src="{{film.Poster != 'N/A' ? film.Poster : 'img/no-thumb.jpg'}}" 
+							alt="{{film.Title}}">
+
+						<!-- Name of the movie -->
+						<h3>{{film.Title}}</h3>
+
+					</div>
 
 				</md-radio-button>
 
-			</md-grid-tile-footer>
+			</div>			
 
-		</md-grid-tile>
+		</div>		
 
+	</md-radio-group>
 
-	</md-grid-list>
+	<!-- Container for the buttons -->
+	<div layout="row" layout-align="space-between center">
 
-</md-radio-group>
+		<!-- Button to navigate back to the th about yourself page -->
+		<md-button 
+			class="md-raised md-primary"
+			ui-sref="about-yourself">
 
-<!-- Button to navigate back to the th about yourself page -->
-<md-button 
-	class="md-raised md-primary"
-	ui-sref="about-yourself">
+			Back to about yourself
 
-	Back to about yourself
+		</md-button>
 
-</md-button>
+		<!-- Button to navigate to the Tv Show page -->
+		<md-button 
+			class="md-raised md-primary"
+			ui-sref="tv-show"
+			ng-disabled="!movie.answer.movie">
 
+			Next (Tv Show)
 
+		</md-button>
 
-<!-- Button to navigate to the Tv Show page -->
-<md-button 
-	class="md-raised md-primary"
-	ui-sref="tv-show">
+	</div>
 
-	Next (Tv Show)
-
-</md-button>
+</div>

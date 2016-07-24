@@ -10,17 +10,19 @@
 	*
 	* Controller that manages the About Yourself page
 	*/
-	angular.module('app').controller('AboutYourselfController', AboutYourselfController);
+	angular.module('app').controller('AboutYourselfController', ['AnswersService', AboutYourselfController]);
 
 	/**
 	 * About Yourself Controller Function
 	 */
-	function AboutYourselfController() {
+	function AboutYourselfController(AnswersService) {
 		
 		//Sets the "aboutYourself" variable to the current instance of the controller
 		var aboutYourself = this;
 
-		aboutYourself.teste = 'ahhhhhhhhhhhhhhhhhhhhhhh!!!!!!!!!!!!!!!!!';
+		//Sets the answare property with the AnswersService
+		aboutYourself.answer = AnswersService;
+
 	}
 
 })()

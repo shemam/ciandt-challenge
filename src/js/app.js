@@ -6,10 +6,10 @@
 (function(){
 
 	/**
-	* App Module
+	* App Module.
 	*
 	* Main application module
 	*/
-	angular.module('app', ['ngMaterial','ui.router']);
+	angular.module('app', ['ngMaterial','ui.router', 'ngMessages', 'angular.filter']);
 
 })()

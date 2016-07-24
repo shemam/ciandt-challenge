@@ -20,7 +20,11 @@
 		//Sets the root variable to the current instance of the controller
 		var root = this;
 
-		root.teste = 'ahhhhhhhhhhhhhhhhhhhhhhh!!!!!!!!!!!!!!!!!';
+		//Title shown in the page
+		root.title = 'CI&T Challenge';
+
+		//First page message
+		root.message = 'This simple app is an answer to the CI&T challenge. Click on the "Start the Survey" button to start answering the questions in the app.'
 	}
 
 })()

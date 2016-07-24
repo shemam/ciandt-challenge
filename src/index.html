@@ -28,28 +28,38 @@
 		<!-- CI&T Favicon -->
 		<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 
+		<!-- Makes the app look like a native app on chrome -->
+		<meta name="mobile-web-app-capable" content="yes">
+
+		<!-- Makes the app look like a native app on ios -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+
+		
+
 		<!-- App Title -->
 		<title>CI&T Challenge</title>
 
 	</head>
 	<body>
 
-		<!-- Main content on the Screen -->
-		<md-content>
-			
-			<!-- Toolbar -->
-			<md-toolbar class="md-toolbar-tools" layout-align="center center">
-				
-				<!-- App title -->
-				<h3>CI&T Hiring Challenge</h3>
+		<!-- Toolbar -->
+		<md-toolbar class="md-toolbar-tools" layout-align="center center">
 
-			</md-toolbar>
+			<!-- App title -->
+			<h3>CI&T Hiring Challenge</h3>
+
+		</md-toolbar>
+
+		<!-- Main content on the Screen -->
+		<md-content id="content">		
+
 
 			<!-- Place where the views will be inserted -->
 			<div ui-view
 				data-layout="column" 
-				data-flex=""
-				id="content">
+				class="view">
+
+				Loading app...
 					
 			</div>
 

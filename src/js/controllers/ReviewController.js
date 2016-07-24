@@ -10,29 +10,31 @@
 	*
 	* Controller that manages the Review page
 	*/
-	angular.module('app').controller('ReviewController', ReviewController);
+	angular.module('app').controller('ReviewController', ['AnswersService', 'Constants', ReviewController]);
 
 	/**
 	 * Review Controller Function
 	 */
-	function ReviewController() {
+	function ReviewController(AnswersService, Constants) {
 		
 		//Sets the review variable to the current instance of the controller
 		var review = this;
 
-		review.superHero = 'Superman';
+		//Sets the answare property with the AnswersService
+		review.answer = AnswersService;
 
-		review.tvShow = 'Breaking Bad';
+		//Returns the tv show name plus the selected season
+		review.getTvShow = function () {
 
-		review.biscuit = 'Bisoito';
+			//If there is a season selected returns it concatenated with the tv show name
+			if (review.answer.season) {
+				return (Constants.TV_SHOW + " Season: " + review.answer.season).toUpperCase();
 
-		review.quote = 'Imagination is more important than knowledge';
-
-		review.movie = 'Star Wars episode X';
-
-		review.season = 'Got - Season X';
-
-		review.food = 'Gimme meat';
+			//Or else returns the not informed message
+			} else {
+				return "NOT INFORMED";
+			}
+		}
 	}
 
 })()
