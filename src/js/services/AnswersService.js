@@ -20,6 +20,11 @@
 		//Sets the answersService variable to the current instance of the service
 		var answersService = this;
 
+		//It was not specified where the data should be saved so this function
+		//only logs it to the console
+		this.save = function () {
+			console.log(this);
+		}
 
 	}
 

@@ -1,0 +1,17 @@
+<!-- Container for the info modal -->
+<div class="info-container" layout="column" layout-align="center center">
+
+	<!-- Simple table to display the info about a particular episode -->
+	<table>
+
+		<!-- Loops through all properties in the episode showing their names and values -->
+		<tr ng-repeat="(key, value) in info.episode">
+			<td><strong>{{key}}:</strong></td>
+			<td>{{value}}</td>
+		</tr>
+	</table>
+
+	<!-- Button to close the modal window -->
+	<md-button class="md-primary md-block md-raised" ng-click="info.close()">Close</md-button>
+	
+</div>

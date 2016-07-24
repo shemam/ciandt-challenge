@@ -10,12 +10,12 @@
 	*
 	* Controller that manages the Tv Show page
 	*/
-	angular.module('app').controller('TvShowController', ['AnswersService', 'Constants', 'MovieApiService', TvShowController]);
+	angular.module('app').controller('TvShowController', ['AnswersService', 'Constants', 'MovieApiService', '$mdDialog', TvShowController]);
 
 	/**
 	 * Tv Show Controller Function
 	 */
-	function TvShowController(AnswersService, Constants, MovieApiService) {
+	function TvShowController(AnswersService, Constants, MovieApiService, $mdDialog) {
 		
 		//Sets the tvShow variable to the current instance of the controller
 		var tvShow = this;
@@ -73,6 +73,37 @@
 			//Returns the seasons collection
 			return seasons;
 		}
+
+        //Shows the info about a particular episode in a modal windpw
+        tvShow.info = function (episode, ev) {
+
+            //Shows an Dialog window with the info about a particular episode
+            $mdDialog.show({
+
+                //Controller of the dialog window injecting the local variable episode 
+                //and the $mdDialog service
+                controller: ['episode','$mdDialog', function (episode, $mdDialog) {
+
+                    //Sets the episode object in the episode property
+                    //on the controller so it can be used in the html
+                    this.episode = episode;
+
+                    //Function to close the dialog 
+                    this.close=function () {
+                        $mdDialog.hide();
+                    }
+                }],//Controller of the Dialog
+                controllerAs: 'info',
+                templateUrl: 'tv-show-info.html',//Template of the dialog
+                parent: angular.element(document.body),//Parent element where the dialog will be inserted
+                targetEvent: ev,//Event the started the action
+                clickOutsideToClose: true, //Click out of the dialog behavior
+                fullscreen: false, //Full screen behavior
+                locals: {
+                   episode: episode//local variables passed to the controller
+                }
+            });
+        }
 
 	}
 
