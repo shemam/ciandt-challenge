@@ -7,7 +7,7 @@
 	<!-- Page Description -->
 	<p>First things first: Tell us a little bit about yourself.</p>
 
-	<form name="aboutYourselForm" novalidate>
+	<form name="aboutYourselForm" novalidate id="aboutYourselForm">
 
 		<!-- Container for the form inputs -->
 		<div layout="column"  layout-gt-sm="row" flex>
@@ -22,7 +22,8 @@
 						md-maxlength="30" 
 						required 
 						md-no-asterisk
-						name="superhero">
+						name="superhero"
+						class="field">
 
 					<!-- Error messages for the superhero input -->
 					<div ng-messages="aboutYourselForm.superhero.$error">
@@ -46,7 +47,8 @@
 						md-maxlength="50" 
 						required 
 						md-no-asterisk
-						name="tvSeries">
+						name="tvSeries"
+						class="field">
 
 					<!-- Error messages for the tvSeries input -->
 					<div ng-messages="aboutYourselForm.tvSeries.$error">
@@ -69,7 +71,7 @@
 				<!-- Input for way of saying biscuit in portuguese -->
 				<md-input-container class="adjust-select">
 					<label>Wich one do you use: Bolacha or biscoito?</label>
-					<md-select name="biscuit" ng-model="aboutYourself.answer.biscuit" required >						
+					<md-select name="biscuit" ng-model="aboutYourself.answer.biscuit" required class="field">						
 						<md-option value="Bolacha">Bolacha</md-option>
 						<md-option value="Biscoito">Biscoito</md-option>
 					</md-select>
@@ -92,7 +94,8 @@
 						md-maxlength="200" 
 						required 
 						md-no-asterisk
-						name="quote">
+						name="quote"
+						class="field">
 
 					<!-- Error messages for the quote input -->
 					<div ng-messages="aboutYourselForm.quote.$error">
@@ -124,10 +127,9 @@
 
 			<!-- Button to navigate to the Movie page -->
 			<md-button 
-				class="md-raised md-primary"
+				class="md-raised md-primary field"
 				ui-sref="movie"
-				ng-disabled="aboutYourselForm.$invalid"
-				type="submit">
+				ng-disabled="aboutYourselForm.$invalid">
 
 				Next (Movie)
 

@@ -1,7 +1,7 @@
 {
-  "name": "link",
+  "name": "app",
   "version": "1.0.0",
-  "description": "App de marcação de Consultas Médicas",
+  "description": "CI&T Hiring Challenge",
   "author": "Shermam Miranda",
   "devDependencies": {    
     "gulp": "^3.9.1",

@@ -26,9 +26,11 @@
 
 						<!-- Movie Image -->
 						<!-- If an image is not available shows a default image -->
+						<!-- Looks like the api only shows the image when the request is from local host -->
 						<img class="movie-image md-whiteframe-4dp"
 							ng-src="{{film.Poster != 'N/A' ? film.Poster : 'img/no-thumb.jpg'}}" 
-							alt="{{film.Title}}">
+							alt="{{film.Title}}"
+							fallback-src="img/no-thumb.jpg">
 
 						<!-- Name of the movie -->
 						<h3>{{film.Title}}</h3>

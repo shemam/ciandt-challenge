@@ -19,8 +19,8 @@ var module = 'app';
  * 
  * @type {String}
  */
-//var host = '192.168.1.103';
-var host = 'localhost';
+var host = '192.168.1.103';
+//var host = 'localhost';
 
 
 /**
@@ -131,7 +131,7 @@ gulp.task('serve', ['build'], function () {
 	gulp.src('dist')
     	.pipe(webserver({
 			open: true,
-			host : host,
+			host : host
 		}));
 })
 
