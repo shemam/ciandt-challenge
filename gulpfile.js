@@ -148,7 +148,8 @@ gulp.task('build', [
 	'build-libs-js',
 	'build-js',
 	'build-templates',
-	'move-img'
+	'move-img',
+	'move-manifest'
 ]);
 
 /**
@@ -207,7 +208,8 @@ gulp.task('build-libs-css', function () {
 
 	//CSS Libraries to be concatenated
 	var files = [
-		"./node_modules/angular-material/angular-material.min.css"
+		"./node_modules/angular-material/angular-material.min.css",
+		"./node_modules/angular-ui-router-anim-in-out/css/anim-in-out.css"
 	];
 
 	return gulp.src(files)
@@ -240,7 +242,8 @@ gulp.task('build-libs-js', function () {
 		"./node_modules/angular-material/angular-material.min.js",
 		"./node_modules/angular-ui-router/release/angular-ui-router.min.js",
 		"./node_modules/angular-messages/angular-messages.min.js",
-		"./node_modules/angular-filter/dist/angular-filter.min.js"	
+		"./node_modules/angular-filter/dist/angular-filter.min.js",
+		"./node_modules/angular-ui-router-anim-in-out/anim-in-out.js"
 	];
 	
 	return gulp.src(libs)
@@ -364,5 +367,18 @@ gulp.task('move-img', function () {
 	//Moves all images to the dist/img folder
 	gulp.src('src/img/*')
   		.pipe(gulp.dest('dist/img'));
+
+});
+
+/**
+ * Move Manifest
+ *
+ * Task to move the manifest to dist folder
+ */
+gulp.task('move-manifest', function () {
+
+	//Moves the manifest to the dist folder
+	gulp.src('src/manifest.json')
+  		.pipe(gulp.dest('dist'));
 
 });

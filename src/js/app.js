@@ -10,7 +10,7 @@
 	*
 	* Main application module
 	*/
-	angular.module('app', ['ngMaterial','ui.router', 'ngMessages', 'angular.filter']);
+	angular.module('app', ['ngMaterial','ui.router', 'ngMessages', 'angular.filter', 'anim-in-out']);
 
 	/**
      * Configuração do Serviço de Ícones do Angular Material

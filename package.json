@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "CI&T Hiring Challenge",
   "author": "Shermam Miranda",
-  "devDependencies": {    
+  "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^2.0.0",
     "gulp-clean-css": "^2.0.11",
@@ -21,6 +21,7 @@
     "angular-filter": "^0.5.9",
     "angular-material": "^1.1.0-rc.5",
     "angular-messages": "^1.5.8",
-    "angular-ui-router": "^0.3.1"
+    "angular-ui-router": "^0.3.1",
+    "angular-ui-router-anim-in-out": "^1.0.2"
   }
 }

@@ -37,7 +37,9 @@
 		<!-- Makes the app look like a native app on ios -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 
-		
+		<!-- Link to the app manifest file. -->
+		<!-- Actually the manifest and service worker would only be of any good if the app were being served from https -->
+		<link rel="manifest" href="manifest">
 
 		<!-- App Title -->
 		<title>CI&T Challenge</title>
@@ -60,7 +62,8 @@
 			<!-- Place where the views will be inserted -->
 			<div ui-view
 				data-layout="column" 
-				class="view">
+				class="view anim-in-out"
+				data-anim-speed="200">
 
 				Loading app...
 					

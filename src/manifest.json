@@ -1,0 +1,7 @@
+{
+  "name": "CI&T Challeng",
+  "background_color" : "#3F51B5",
+  "theme_color" : "#3F51B5",
+  "start_url": "index.html",
+  "display": "standalone"
+}
