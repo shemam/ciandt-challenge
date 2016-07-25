@@ -13,9 +13,9 @@
 	angular.module('app', ['ngMaterial','ui.router', 'ngMessages', 'angular.filter', 'anim-in-out']);
 
 	/**
-     * Configuração do Serviço de Ícones do Angular Material
+	 * Angular Material Icon service Configuration
      * 
-     * @param  {Angular.provider} $mdIconProvider - Serviço do Angular para inclusão de Ícones
+     * @param  {Angular.provider} $mdIconProvider - Angular Service for adding icons
      */
     angular.module('app').config(['$mdIconProvider', function ($mdIconProvider) {
         
