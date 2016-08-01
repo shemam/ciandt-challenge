@@ -69,17 +69,34 @@
 					
 			</div>
 
-		</md-content>	
+		</md-content>
 
 
 		<!-- Link to the Libs Javascript file -->
-		<script src="js/lib.js" defer></script>
+		<script src="js/lib.js" ></script>
+
+		<!-- Moved the main app module declaration here because the it must come before its usage in the controller, services, etc  -->
+		<!-- The gulp-concat service was not concatenating the files in order on linux as it does on windows -->
+		<!-- Another option to garantee the sequence that the files are concatenated is to list the in order in an array in the gulp task -->
+		<!-- Also removed the "defer" atribute because the browser didn't seem to garantee the sequence of execution of in-line js -->
+		<script type="text/javascript" >
+
+			(function () {
+				/**
+				* App Module.
+				*
+				* Main application module
+				*/
+				angular.module('app', ['ngMaterial','ui.router', 'ngMessages', 'angular.filter', 'anim-in-out']);
+			})()
+
+		</script>
 
 		<!-- Link to the main Javascript file -->
-		<script src="js/main.js" defer></script>
+		<script src="js/main.js" ></script>
 
 		<!-- Link to the templates Javascript file -->
-		<script src="js/templates.js" defer></script>
+		<script src="js/templates.js" ></script>
 
 	</body>
 </html>

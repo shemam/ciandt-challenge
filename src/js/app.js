@@ -6,13 +6,6 @@
 (function(){
 
 	/**
-	* App Module.
-	*
-	* Main application module
-	*/
-	angular.module('app', ['ngMaterial','ui.router', 'ngMessages', 'angular.filter', 'anim-in-out']);
-
-	/**
 	 * Angular Material Icon service Configuration
      * 
      * @param  {Angular.provider} $mdIconProvider - Angular Service for adding icons
